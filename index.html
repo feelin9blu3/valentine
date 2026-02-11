@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valentine 💖</title>
+
+<style>
+body{
+  background:#ffe6ef;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  font-family:Arial, sans-serif;
+}
+.box{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  width:280px;
+}
+button{
+  padding:12px 20px;
+  border:none;
+  border-radius:20px;
+  font-size:16px;
+  margin-top:10px;
+}
+#yes{background:#ff4d88;color:white;}
+#no{background:#eee;position:absolute;}
+.hide{display:none;}
+.option{
+  background:#f3f3f3;
+  padding:12px;
+  margin:8px 0;
+  border-radius:15px;
+}
+.option:active{
+  background:#ffb3c6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box" id="p1">
+  <h3>pas valentine mamam diluar yuk by🥹👉🏻👈🏻</h3>
+  <button id="yes" onclick="go2()">YES</button>
+  <button id="no">NO</button>
+</div>
+
+<div class="box hide" id="p2">
+  <h3>kamu tanggal ini bisa kan?!?!? </h3>
+  <div class="option" onclick="go3()">14.02.2026 — 19:00</div>
+</div>
+
+<div class="box hide" id="p3">
+  <h3>kita mam apaa?🍽️</h3>
+  <div class="option" onclick="finish('Taichan')">Taichan</div>
+  <div class="option" onclick="finish('Nasi Goreng')">Nasi Goreng</div>
+  <div class="option" onclick="finish('Sushi')">Sushi</div>
+  <div class="option" onclick="finish('Seafood')">Seafood</div>
+  <div class="option" onclick="finish('Pikir Nanti?? wkwk')">Pikir Nanti?? wkwk</div>
+</div>
+
+<div class="box hide" id="p4">
+  <h3>💖💖💖</h3>
+  <p id="result"></p>
+</div>
+
+<script>
+const no=document.getElementById("no");
+no.ontouchstart=no.onmouseover=()=>{
+  no.style.transform=`translate(${Math.random()*200-100}px,${Math.random()*200-100}px)`;
+}
+
+function go2(){
+  p1.classList.add("hide");
+  p2.classList.remove("hide");
+}
+function go3(){
+  p2.classList.add("hide");
+  p3.classList.remove("hide");
+}
+function finish(food){
+  alert("YAY MAACI SAYANGKUU💖😚");
+  p3.classList.add("hide");
+  p4.classList.remove("hide");
+  document.getElementById("result").innerText =
+    "Pilihan kamu: " + food + " 😋\nI CAN'T WAIT FOR IT💋";
+}
+</script>
+
+</body>
+</html>
